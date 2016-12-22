@@ -15,21 +15,29 @@ public class MyFileReader {
 			FileReader fr = new FileReader(f);
 			Scanner sc = new Scanner(fr);
 			
-			int i = -1, j = 0;
+			int i = 0, j = 0;
+			int cpti = size, cptj = size;
 			int n;
 			
 			while (sc.hasNextInt()) {
 				n = sc.nextInt();
 				
-				if (n == 0) {
+//				if (n == 0) {
+//					i++;
+//					j = i;
+//				}
+				
+				if (cptj == 0) {
 					i++;
 					j = i;
+					cptj = --cpti;
 				}
 				
 				matrix[i][j] = n;
 				matrix[j][i] = n;
 				
 				j++;
+				cptj--;
 			}
 			
 			sc.close();

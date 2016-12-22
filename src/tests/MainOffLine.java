@@ -24,10 +24,10 @@ public class MainOffLine {
 			System.out.println(i+1 + " " + randSol.getObj1() + " " + randSol.getObj2());
 		}
 		
-		MyFileWriter.writeData("data/randomABnonFiltered.tsp", solutions);
+		MyFileWriter.writeData("randomABNonFiltered.tsp", solutions);
 		
 		OffLine off = new OffLine();
-		MyFileWriter.writeData("data/randomABFilteredOffLine.tsp", off.run(solutions));					
+		MyFileWriter.writeData("randomABOffLineFiltered.tsp", off.run(solutions));					
 	}
 
 }
