@@ -1,0 +1,2 @@
+set title "randomAB approche scalaire"
+plot "randomABOffLineFiltered.tsp" using 1:2 title "offline filtered" linetype 7 linecolor 6, "randomABNonFiltered.tsp" using 1:2 title "non filtered" linetype 7 linecolor 7
