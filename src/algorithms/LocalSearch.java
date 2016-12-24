@@ -9,7 +9,7 @@ public class LocalSearch {
 	
 	public static Solution run(Solution sol, int obj) {
 		Solution res = sol;
-		System.out.println(sol);
+//		System.out.println(sol);
 		int n = res.size();
 		boolean improved = true;
 		

@@ -1,6 +1,6 @@
 package tests;
 
-import algorithms.LocalSearch;
+//import algorithms.LocalSearch;
 import models.Instance;
 import models.Solution;
 import utils.MyFileReader;
@@ -14,8 +14,8 @@ public class Main2Opt {
 		Solution randomSol = randomAB100.randomSolution();
 		randomSol.eval();
 		System.out.println(randomSol.objectives[0] + " " + randomSol.objectives[1]);
-		Solution res = LocalSearch.run(randomSol, 0);
-		System.out.println(res.objectives[0] + " " + res.objectives[1]);
+//		Solution res = LocalSearch.run(randomSol, 0);
+//		System.out.println(res.objectives[0] + " " + res.objectives[1]);
 	}
 
 }
