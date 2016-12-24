@@ -22,11 +22,6 @@ public class MyFileReader {
 			while (sc.hasNextInt()) {
 				n = sc.nextInt();
 				
-//				if (n == 0) {
-//					i++;
-//					j = i;
-//				}
-				
 				if (cptj == 0) {
 					i++;
 					j = i;

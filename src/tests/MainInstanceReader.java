@@ -6,9 +6,18 @@ public class MainInstanceReader {
 
 	public static void main(String[] args) {
 		int[][] mA = MyFileReader.read("data/randomA100.tsp", 100);
+		int[][] mB = MyFileReader.read("data/randomB100.tsp", 100);
+		int[][] mC = MyFileReader.read("data/randomC100.tsp", 100);
+		int[][] mD = MyFileReader.read("data/randomD100.tsp", 100);
+		int[][] mE = MyFileReader.read("data/randomE100.tsp", 100);
+		int[][] mF = MyFileReader.read("data/randomF100.tsp", 100);
+		
 		print(mA);
-		int[][] mB = MyFileReader.read("data/randomC100.tsp", 100);
-
+		print(mB);
+		print(mC);
+		print(mD);
+		print(mE);
+		print(mF);
 	}
 	
 	public static void print(int[][] matrix) {
