@@ -1,7 +1,5 @@
 /tests/
 /utils/
-/filters/
-/models/
-/algorithms/
-/Neighborhood/
 /neighborhood/
+/algorithms/
+/models/

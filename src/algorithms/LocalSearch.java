@@ -4,24 +4,27 @@ import java.util.ArrayList;
 import java.util.List;
 
 import models.Solution;
+import models.WeightVector;
 
 public class LocalSearch {
 	
-	public static Solution run(Solution sol, int obj) {
-		Solution res = sol;
+	public static Solution run(Solution sol, WeightVector v) {
+		Solution cand = sol;
+//		List<Solution> list = new ArrayList<>();
 //		System.out.println(sol);
-		int n = res.size();
+		int n = cand.size();
 		boolean improved = true;
 		
 		while (improved) {
 			improved = false;
 			for (int i = 0; i < n-1; i++) {
 				for (int j = i+1; j < n; j++) {
-					res = twoOptSwap(sol, i, j);
-					res.eval();
-					if (res.objectives[obj] < sol.objectives[obj]) {
+					cand = twoOptSwap(sol, i, j);
+					cand.eval();
+					if (cand.objectives[obj] < sol.objectives[obj]) {
 //						System.out.println(sol.objectives[obj] + " -> " + res.objectives[obj]);
-						sol = res;
+						sol = cand;
+//						list.add(res);
 						improved = true;
 					}
 				}
@@ -30,6 +33,7 @@ public class LocalSearch {
 //		System.out.println(sol);
 //		System.out.println(sol.objectives[0]);
 		return sol;
+//		return list;
 	}
 	
 	/**
