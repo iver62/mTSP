@@ -37,31 +37,35 @@ public class StochasticLocalSearch {
 //	}
 	
 	public static Solution run(Solution sol, WeightVector v) {
-		int nbIterations = 0;
+		int nbIterations = 100;
 		Random rand = new Random();
-		Solution res = sol;
+//		Solution res = sol;
 		
-		while (nbIterations <= 100) {
+		while (nbIterations > 0) {
 			int i = 0, j = 0;
 			while (i == j) {
 				i = rand.nextInt(sol.size());
 			    j = rand.nextInt(sol.size());
 			}
 			
-			Solution cand = TwoOpt.run(res, v);
+			Solution cand = TwoOpt.run(sol, v);
+//			sol.eval();
 
-			double cost1 = cand.objectives[0]*v.w1 + cand.objectives[1]*v.w2; // new cost
-			double cost2 = res.objectives[0]*v.w1 + res.objectives[1]*v.w2; // old cost
-			if (cost1 < cost2) {
-				res = cand;
-				nbIterations = 0;
+			double weightCand = cand.objectives[0]*v.w1 + cand.objectives[1]*v.w2; // somme ponderee de la solution candidate
+			double weigthSol = sol.objectives[0]*v.w1 + sol.objectives[1]*v.w2; // somme ponderee de la meilleure solution courante
+			if (weightCand < weigthSol) {
+				sol = cand;
+				sol.eval();
+//				System.out.println(weightCand + " " + weigthSol + " " + sol.objectives[0] + " " + sol.objectives[1]);
+				nbIterations = 100;
 			}
 			else {
-				nbIterations++;
+				nbIterations--;
+//				System.out.println(nbIterations);
 			}
 		}
-			
-		return res;
+		
+		return sol;
 	}
 	
 //	public static Solution twoOpt(Solution sol, WeightVector v) {

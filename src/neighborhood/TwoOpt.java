@@ -5,29 +5,39 @@ import models.WeightVector;
 
 public class TwoOpt {
 	
-	public static Solution run(Solution initSol, WeightVector v) {
-		Solution res = initSol; // au debut le meilleur voisin est la solution initiale
+	public static Solution run(Solution sol, WeightVector v) {
+//		Solution res = sol; // au debut le meilleur voisin est la solution initiale
+		Solution res = new Solution(sol.instance, sol.list); // au debut le meilleur voisin est la solution initiale
+		res.eval();
 //		List<Solution> list = new ArrayList<>();
 //		System.out.println(sol);
 		int n = res.size();
-		boolean improved = true;
+//		boolean improved = true;
 		
-		while (improved) {
-			improved = false;
+//		while (improved) {
+//			improved = false;
 			for (int i = 0; i < n-1; i++) {
 				for (int j = i+1; j < n; j++) {
-					Solution cand = new Solution(res.instance, res.list);
-					cand.kopt(i, j);
-					cand.eval();
-					if (cand.objectives[0]*v.w1 + cand.objectives[1]*v.w2 < res.objectives[0]*v.w1 + res.objectives[1]*v.w2) {
+//					Solution cand = new Solution(res.instance, res.list);
+//					cand.kopt(i, j);
+//					cand.eval();
+					sol.kopt(i, j);
+//					System.out.println(sol.list.size());
+					sol.eval();
+					if (sol.objectives[0]*v.w1 + sol.objectives[1]*v.w2 < res.objectives[0]*v.w1 + res.objectives[1]*v.w2) {
 //						System.out.println(sol.objectives[obj] + " -> " + res.objectives[obj]);
-						res = cand;
+//						res = sol;
+						res = new Solution(sol.instance, sol.list);
+						res.eval();
+//						System.out.println(res.objectives[0] + " " + res.objectives[1]);
 //						list.add(res);
-						improved = true;
+//						improved = true;
 					}
+					sol.kopt(i, j);
+					sol.eval();
 				}
 			}
-		}
+//		}
 //		System.out.println(sol);
 //		System.out.println(sol.objectives[0]);
 		return res;
