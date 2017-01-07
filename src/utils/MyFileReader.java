@@ -39,7 +39,8 @@ public class MyFileReader {
 		}
 		
 		catch (FileNotFoundException exception) {
-		    System.out.println("Le fichier n'a pas ete trouve");
+		    System.out.println("Le fichier " + filename + " n'a pas ete trouve");
+		    System.exit(0);
 		}
 		return matrix;
 	}

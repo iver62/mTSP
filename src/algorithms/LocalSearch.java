@@ -1,12 +1,10 @@
 package algorithms;
 
-import java.util.Random;
-
 import models.Solution;
 import models.WeightVector;
 import neighborhood.TwoOpt;
 
-public class StochasticLocalSearch {
+public class LocalSearch {
 	
 //	public static Solution run(Solution sol, WeightVector v) {
 //		Solution cand = sol;
@@ -37,19 +35,18 @@ public class StochasticLocalSearch {
 //	}
 	
 	public static Solution run(Solution sol, WeightVector v) {
-		int nbIterations = 100;
-		Random rand = new Random();
-//		Solution res = sol;
+//		int nbIterations = 100;
+//		Random rand = new Random();
+		boolean improve = true;
 		
-		while (nbIterations > 0) {
-			int i = 0, j = 0;
-			while (i == j) {
-				i = rand.nextInt(sol.size());
-			    j = rand.nextInt(sol.size());
-			}
+		while (improve) {
+//			int i = 0, j = 0;
+//			while (i == j) {
+//				i = rand.nextInt(sol.size());
+//			    j = rand.nextInt(sol.size());
+//			}
 			
 			Solution cand = TwoOpt.run(sol, v);
-//			sol.eval();
 
 			double weightCand = cand.objectives[0]*v.w1 + cand.objectives[1]*v.w2; // somme ponderee de la solution candidate
 			double weigthSol = sol.objectives[0]*v.w1 + sol.objectives[1]*v.w2; // somme ponderee de la meilleure solution courante
@@ -57,10 +54,12 @@ public class StochasticLocalSearch {
 				sol = cand;
 				sol.eval();
 //				System.out.println(weightCand + " " + weigthSol + " " + sol.objectives[0] + " " + sol.objectives[1]);
-				nbIterations = 100;
+//				nbIterations = 100;
+				improve = true;
 			}
 			else {
-				nbIterations--;
+//				nbIterations--;
+				improve = false;
 //				System.out.println(nbIterations);
 			}
 		}
