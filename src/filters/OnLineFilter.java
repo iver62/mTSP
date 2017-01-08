@@ -13,6 +13,13 @@ public class OnLineFilter {
 		archive = new ArrayList<Solution>();
 	}
 	
+	/**
+	 * Filtre les solutions de l'archive strategie on-line. A partir d'une solution donnee en parametre,
+	 * verifie si cette solution n'est dominee par aucune solution de l'archive. Si elle n'est pas dominee
+	 * alors cette solution est ajoutee a l'archive puis mise a jour de l'archive pour enlever les
+	 * eventuelles solutions dominees.
+	 * @param sol une solution
+	 */
 	public void filter(Solution sol) {
 		List<Solution> copy = new ArrayList<Solution>(archive);
 		if (copy.size() > 0) { // si l'archive est vide
@@ -32,6 +39,13 @@ public class OnLineFilter {
 
 	public List<Solution> getArchive() {
 		return archive;
+	}
+	
+	/**
+	 * Efface le contenu de l'archive.
+	 */
+	public void clear() {
+		archive.clear();
 	}
 
 }

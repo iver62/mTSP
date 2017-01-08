@@ -25,7 +25,7 @@ public class MainScalar {
 			Instance randomXY100 = new Instance(mX, mY); 
 			List<Solution> archive = new ArrayList<Solution>();
 			List<Solution> randomSolutions = new ArrayList<Solution>();
-			OffLineFilter offLine = new OffLineFilter();
+//			OffLineFilter offLine = new OffLineFilter();
 			
 			System.out.println("Running...");
 			
@@ -42,7 +42,7 @@ public class MainScalar {
 			String target_path = new String("random"+filename1.charAt(6)+filename2.charAt(6));
 			MyFileWriter.writeData("res/scalar/"+target_path+"_Random_z="+z+"_nb="+nbSolutions+".tsp", randomSolutions);
 			MyFileWriter.writeData("res/scalar/"+target_path+"_NonFiltered_z="+z+"_nb="+nbSolutions+".tsp", archive);
-			MyFileWriter.writeData("res/scalar/"+target_path+"_OffLineFiltered_z="+z+"_nb="+nbSolutions+".tsp", offLine.filter(archive));
+			MyFileWriter.writeData("res/scalar/"+target_path+"_OffLineFiltered_z="+z+"_nb="+nbSolutions+".tsp", OffLineFilter.filter(archive));
 			
 			System.out.println("Done");
 		}

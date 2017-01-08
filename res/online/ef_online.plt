@@ -1,2 +1,2 @@
 set title "randomEF"
-plot "randomEFOnLineFiltered.tsp" using 1:2 title "online filtered" linetype 7 linecolor 6, "../../data/best.randomEF100.tsp" using 1:2 title "best" linetype 7 linecolor 7
+plot "randomEFNonFiltered.tsp" using 1:2 title "non filtered" linetype 7 linecolor 6, "randomEFOnLineFiltered.tsp" using 1:2 title "on-line filtered" linetype 7 linecolor 7

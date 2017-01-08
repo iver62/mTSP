@@ -44,7 +44,7 @@ public class Solution {
 	
 	/**
 	 * Teste si la solution est dominee par une autre solution
-	 * @param sol une slution
+	 * @param sol une solution
 	 * @return vrai si la solution est dominee, faux sinon
 	 */
 	public boolean isDominated(Solution sol) {

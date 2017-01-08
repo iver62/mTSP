@@ -1,2 +1,2 @@
 set title "randomCD"
-plot "randomCDOnLineFiltered.tsp" using 1:2 title "online filtered" linetype 7 linecolor 6, "../../data/best.randomCD100.tsp" using 1:2 title "best" linetype 7 linecolor 7
+plot "randomCDNonFiltered.tsp" using 1:2 title "non filtered" linetype 7 linecolor 6, "randomCDOnLineFiltered.tsp" using 1:2 title "on-line filtered" linetype 7 linecolor 7
