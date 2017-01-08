@@ -25,7 +25,6 @@ public class MainScalar {
 			Instance randomXY100 = new Instance(mX, mY); 
 			List<Solution> archive = new ArrayList<Solution>();
 			List<Solution> randomSolutions = new ArrayList<Solution>();
-//			OffLineFilter offLine = new OffLineFilter();
 			
 			System.out.println("Running...");
 			
@@ -33,22 +32,20 @@ public class MainScalar {
 				Solution randomSol = randomXY100.randomSolution();
 				randomSolutions.add(randomSol);
 				randomSol.eval();
-//				System.out.println(i+1 + " " + randomSol.objectives[0] + " " + randomSol.objectives[1]);
 				archive.addAll(Scalar.run(randomSol, z));
 				System.out.println(i+1+"/"+nbSolutions);
-//				System.out.println(i+1 + " " + randomSol.objectives[0] + " " + randomSol.objectives[1]);
 			}
 			
 			String target_path = new String("random"+filename1.charAt(6)+filename2.charAt(6));
-			MyFileWriter.writeData("res/scalar/"+target_path+"_Random_z="+z+"_nb="+nbSolutions+".tsp", randomSolutions);
-			MyFileWriter.writeData("res/scalar/"+target_path+"_NonFiltered_z="+z+"_nb="+nbSolutions+".tsp", archive);
+//			MyFileWriter.writeData("res/scalar/"+target_path+"_Random_z="+z+"_nb="+nbSolutions+".tsp", randomSolutions);
+//			MyFileWriter.writeData("res/scalar/"+target_path+"_NonFiltered_z="+z+"_nb="+nbSolutions+".tsp", archive);
 			MyFileWriter.writeData("res/scalar/"+target_path+"_OffLineFiltered_z="+z+"_nb="+nbSolutions+".tsp", OffLineFilter.filter(archive));
 			
 			System.out.println("Done");
 		}
 		
 		else {
-			System.out.println("Usage : \n\t java -jar scalar.jar <instance1> <instance2> <z> <nombre de solutions>");
+			System.out.println("Usage : \n\t java -jar scalar.jar <instance1> <instance2> <z> <nombre de solutions aleatoires>");
 		}
 
 	}

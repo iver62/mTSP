@@ -39,7 +39,7 @@ public class MainOnLineComparator {
 		}
 		
 		else {
-			System.out.println("Usage : \n\t java -jar online_comp.jar <instance1> <instance2> <nombre de solutions>");
+			System.out.println("Usage : \n\t java -jar online_comp.jar <instance1> <instance2> <nombre de solutions aleatoires>");
 		}
 
 	}

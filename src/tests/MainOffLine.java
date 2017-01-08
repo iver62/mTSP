@@ -34,7 +34,7 @@ public class MainOffLine {
 		}
 		
 		else {
-			System.out.println("Usage : \n\t java -jar offline.jar <instance1> <instance2> <nombre de solutions>");
+			System.out.println("Usage : \n\t java -jar offline.jar <instance1> <instance2> <nombre de solutions aleatoires>");
 		}
 
 	}

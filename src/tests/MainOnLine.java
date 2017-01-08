@@ -36,7 +36,7 @@ public class MainOnLine {
 		}
 		
 		else {
-			System.out.println("Usage : \n\t java -jar online.jar <instance1> <instance2> <nombre de solutions>");
+			System.out.println("Usage : \n\t java -jar online.jar <instance1> <instance2> <nombre de solutions aleatoires>");
 		}
 		
 	}

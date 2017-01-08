@@ -41,6 +41,10 @@ public class OnLineFilter {
 		return archive;
 	}
 	
+	public void setArchive(List<Solution> archive) {
+		this.archive = archive;
+	}
+	
 	/**
 	 * Efface le contenu de l'archive.
 	 */
