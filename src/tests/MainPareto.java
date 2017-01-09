@@ -39,7 +39,7 @@ public class MainPareto {
 		}
 		
 		else {
-			System.out.println("Usage : \n\t java -jar scalar.jar <instance1> <instance2> <nombre de minutes> <nombre de solutions aleatoires>");
+			System.out.println("Usage : \n\t java -jar pareto.jar <instance1> <instance2> <nombre de minutes> <nombre de solutions aleatoires>");
 		}
 
 	}
