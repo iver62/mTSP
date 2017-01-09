@@ -15,6 +15,9 @@ public class Solution {
 		objectives = new int[2];
 	}
 	
+	/**
+	 * Fonction d'evaluation de la solution.
+	 */
 	public void eval() {
 		objectives[0] = 0;
 		objectives[1] = 0;
@@ -29,7 +32,7 @@ public class Solution {
 	}
 	
 	/**
-	 * Teste si la solution est dominee par une des solutions de la liste
+	 * Teste si la solution est dominee par une des solutions de la liste.
 	 * @param solutions une liste de solutions
 	 * @return true si la solution est dominee, faux sinon
 	 */
@@ -43,7 +46,7 @@ public class Solution {
 	}
 	
 	/**
-	 * Teste si la solution est dominee par une autre solution
+	 * Teste si la solution est dominee par une autre solution.
 	 * @param sol une solution
 	 * @return vrai si la solution est dominee, faux sinon
 	 */
@@ -52,31 +55,6 @@ public class Solution {
 			return true;
 		}
 		return false;
-	}
-	
-	/**
-	 * Insere la ieme ville a la position j
-	 * @param i : la ieme ville
-	 * @param j : l'indice ou inserer la ieme ville
-	 */
-	public void insert(int i, int j) {
-		int t = list.get(i);
-		list.remove(i);
-		list.add(j, t);
-	}
-	
-	/**
-	 * Permute deux villes aux positions i et j
-	 * @param i : l'indice de la 1ere ville
-	 * @param j : l'indice de la 2eme ville
-	 */
-	public void swap(int i, int j) {
-		int t1 = list.get(i);
-		int t2 = list.get(j);
-		list.remove(j);
-		list.add(j, t1);
-		list.remove(i);
-		list.add(i, t2);
 	}
 	
 	public void kopt(int i, int j) {

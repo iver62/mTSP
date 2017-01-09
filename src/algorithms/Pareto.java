@@ -26,9 +26,9 @@ public class Pareto {
 		long deb = System.currentTimeMillis();		
 		
 		while (System.currentTimeMillis() - deb < nbMin * 60000) {
-			int i = rand.nextInt(allSolutions.size());
+			int r = rand.nextInt(allSolutions.size());
 			WeightVector v = vectors.get(rand.nextInt(vectors.size()));
-			Solution best = TwoOpt.run(allSolutions.get(i), v);
+			Solution best = TwoOpt.run(allSolutions.get(r), v);
 			onLine.filter(best);
 		}
 		

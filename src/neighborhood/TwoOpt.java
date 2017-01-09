@@ -21,6 +21,7 @@ public class TwoOpt {
 			for (int j = i+1; j < n; j++) {
 				sol.kopt(i, j);
 				sol.eval();
+//				if (res.isDominated(sol)) {
 				if (sol.objectives[0]*v.w1 + sol.objectives[1]*v.w2 < res.objectives[0]*v.w1 + res.objectives[1]*v.w2) { // si la somme ponderee des objectifs de la solution candidate est meilleure que la somme ponderee des objectifs de la meilleure solution courante
 					res = new Solution(sol.instance, sol.list); // la solution candidate devient la meilleure solution
 					res.eval();

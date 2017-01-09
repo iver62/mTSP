@@ -1,2 +1,0 @@
-set title "randomAB approche scalaire"
-plot "randomABOffLineFiltered.tsp" using 1:2 title "offline filtered" linetype 7 linecolor 6, "../../data/best.randomAB100.tsp" using 1:2 title "best" linetype 7 linecolor 1
