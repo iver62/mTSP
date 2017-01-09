@@ -1,10 +1,9 @@
 package neighborhood;
 
-import java.util.ArrayList;
-
 import models.Solution;
+import models.WeightVector;
 
-public class Insert extends Neighborhood {
+public class Insert {
 	
 	/**
 	 * Retourne le meilleur voisin d'un ordonnancement selon la methode des insertions. 
@@ -12,28 +11,22 @@ public class Insert extends Neighborhood {
 	 * @param sol une solution a ameliorer
 	 * @return le meilleur voisin
 	 */
-	public Solution run(Solution sol) {
+	public static Solution run(Solution sol, WeightVector v) {
+		Solution res = new Solution(sol.instance, sol.list); // au debut le meilleur voisin est la solution initiale
+		res.eval();
 		int n = sol.size(); // le nombre de villes de la solution
-		sol.eval(); // evaluation de la solution initiale
-		
-		int obj1 = sol.objectives[0];
-		int obj2 = sol.objectives[1];
-//		System.out.println(obj1 + " " + obj2);
-		Solution res = new Solution(sol.instance, new ArrayList<Integer>(sol.list)); // au debut le meilleur voisin correspond a la solution initiale
 		
 		for (int i = 0; i < n; i++) {
 			for (int j = 0; j < n; j++) {
 				if (i != j) {
 					sol.insert(i, j);
 					sol.eval();
-					if (sol.objectives[0] < obj1 && sol.objectives[1] < obj2) {
-						res = new Solution(sol.instance, new ArrayList<Integer>(sol.list));
+					if (sol.objectives[0]*v.w1 + sol.objectives[1]*v.w2 < res.objectives[0]*v.w1 + res.objectives[1]*v.w2) {
+						res = new Solution(sol.instance, sol.list);
 						res.eval();
-						obj1 = res.objectives[0];
-						obj2 = res.objectives[1];
-//						System.out.println(res.objectives[0] + " " + res.objectives[1]);
 					}
 					sol.insert(j, i);
+					sol.eval();
 				}
 			}
 		}

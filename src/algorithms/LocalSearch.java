@@ -2,6 +2,7 @@ package algorithms;
 
 import models.Solution;
 import models.WeightVector;
+//import neighborhood.Insert;
 import neighborhood.TwoOpt;
 
 public class LocalSearch {

@@ -33,8 +33,7 @@ public class MainPareto {
 			}
 			
 			String target_path = new String("random"+filename1.charAt(6)+filename2.charAt(6));
-//			MyFileWriter.writeData("res/pareto/"+target_path+"_NonFiltered_nb="+nbSolutions+".tsp", archive);
-			MyFileWriter.writeData("res/scalar/"+target_path+"_OnLineFiltered_time="+nbMin+"_nb="+nbSolutions+".tsp", Pareto.run(nbMin, solutions));
+			MyFileWriter.writeData("res/pareto/"+target_path+"_OnLineFiltered_time="+nbMin+"_nb="+nbSolutions+".tsp", Pareto.run(nbMin, solutions, 20));
 			
 			System.out.println("Done");
 		}

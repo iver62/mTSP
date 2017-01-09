@@ -14,6 +14,7 @@ public class MainOnLineComparator {
 			String filename1 = args[0];
 			String filename2 = args[1];
 			int nbSolutions = Integer.valueOf(args[2]);
+			
 			int[][] mX = MyFileReader.read("data/"+filename1, 100);
 			int[][] mY = MyFileReader.read("data/"+filename2, 100);
 			Instance randomXY100 = new Instance(mX, mY);

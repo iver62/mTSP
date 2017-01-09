@@ -37,8 +37,6 @@ public class MainScalar {
 			}
 			
 			String target_path = new String("random"+filename1.charAt(6)+filename2.charAt(6));
-//			MyFileWriter.writeData("res/scalar/"+target_path+"_Random_z="+z+"_nb="+nbSolutions+".tsp", randomSolutions);
-//			MyFileWriter.writeData("res/scalar/"+target_path+"_NonFiltered_z="+z+"_nb="+nbSolutions+".tsp", archive);
 			MyFileWriter.writeData("res/scalar/"+target_path+"_OffLineFiltered_z="+z+"_nb="+nbSolutions+".tsp", OffLineFilter.filter(archive));
 			
 			System.out.println("Done");

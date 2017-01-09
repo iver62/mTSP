@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import models.Solution;
 
-public class Interchange extends Neighborhood {
+public class Interchange {
 	
 	/**
 	 * Retourne le meilleur voisin d'un ordonnancement selon la methode des echanges. 

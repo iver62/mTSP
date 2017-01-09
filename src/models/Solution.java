@@ -101,23 +101,6 @@ public class Solution {
 		return list.toString();
 	}
 	
-//	/**
-//	 * Supprime l'element  a l'indice i
-//	 * @param i l'indice
-//	 */
-//	public void remove(int i) {
-//		sol.remove(i);
-//	}
-//	
-//	/**
-//	 * Ajoute l'entier x a l'indice i
-//	 * @param i l'indice
-//	 * @param x l'entier a ajouter
-//	 */
-//	public void add(int i, int x) {
-//		sol.add(i, x);
-//	}
-	
 	/**
 	 * Remplace l'entier a l'indice i par l'entier x
 	 * @param i l'indice
@@ -134,21 +117,5 @@ public class Solution {
 	public void setList(List<Integer> newList) {
 		this.list = newList;
 	}
-
-//	public List<Integer> getSol() {
-//		return list;
-//	}
-
-//	public int getObj1() {
-//		return obj1;
-//	}
-//
-//	public int getObj2() {
-//		return obj2;
-//	}
-
-//	public Instance getInstance() {
-//		return instance;
-//	}
 
 }

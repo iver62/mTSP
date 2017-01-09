@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 import models.Solution;
 
-public class Swap extends Neighborhood {
+public class Swap {
 	
 	/**
 	 * Retourne le meilleur voisin d'un ordonnancement selon la methode des permutations.
